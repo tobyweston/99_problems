@@ -8,17 +8,20 @@ class P02Test extends org.specs2.mutable.Specification {
     penultimate3 _
   )
 
-  implementations.foreach { implementation =>
-    "get last element" >> {
-      implementation(List(1, 1, 2, 3, 5, 8)) must_== 5
-    }
+  implementations.zipWithIndex.foreach { value =>
+    "implementation " + value._2 >> {
+      val implementation = value._1
+      "get last element" >> {
+        implementation(List(1, 1, 2, 3, 5, 8)) must_== 5
+      }
 
-    "empty list" >> {
-      implementation(List.empty[Int]) must throwA[NoSuchElementException]
-    }
+      "empty list" >> {
+        implementation(List.empty[Int]) must throwA[NoSuchElementException]
+      }
 
-    "single element list" >> {
-      implementation(List(1)) must throwA[NoSuchElementException]
+      "single element list" >> {
+        implementation(List(1)) must throwA[NoSuchElementException]
+      }
     }
   }
 }
