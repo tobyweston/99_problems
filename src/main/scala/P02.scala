@@ -8,9 +8,22 @@ object P02 extends App {
 
   def penultimate[A](list: List[A]): A = {
     list match {
-      case _ :: tail if (tail.size == 2) => tail.head
+      case _ :: tail if tail.size == 2 => tail.head
       case _ :: tail => penultimate(tail)
-      case _ => throw new IllegalArgumentException
+      case _ => throw new NoSuchElementException
     }
+  }
+
+  def penultimate2[A](list: List[A]): A = {
+    list match {
+      case head :: Nil :: _ => head
+      case _ :: tail => penultimate(tail)
+      case _ => throw new NoSuchElementException
+    }
+  }
+
+  def penultimate3[A](list: List[A]): A = {
+    if (list.isEmpty) throw new NoSuchElementException
+    list.init.last
   }
 }

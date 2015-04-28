@@ -7,7 +7,7 @@ class P01Test extends org.specs2.mutable.Specification {
   }
 
   "empty list" >> {
-    last(List.empty[Int]) must throwA[IllegalArgumentException]
+    last(List.empty[Int]) must throwA[NoSuchElementException]
   }
 
   "single element list" >> {

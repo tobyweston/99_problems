@@ -14,7 +14,7 @@ object P01 extends App {
     list match {
       case head :: Nil => head
       case _ :: tail => last(tail)
-      case _ => throw new IllegalArgumentException
+      case _ => throw new NoSuchElementException
     }
   }
 }
