@@ -1,4 +1,4 @@
-import _root_.P01._
+import P01._
 
 class P01Test extends org.specs2.mutable.Specification {
 
@@ -8,6 +8,10 @@ class P01Test extends org.specs2.mutable.Specification {
 
   "empty list" >> {
     last(List.empty[Int]) must throwA[IllegalArgumentException]
+  }
+
+  "single element list" >> {
+    last(List(1)) must_== 1
   }
 
 }
