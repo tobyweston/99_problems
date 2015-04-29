@@ -9,6 +9,7 @@ import scala.annotation.tailrec
 object P04 extends App {
 
   def length[A](list: List[A]): Int = {
+    @tailrec
     def length(count: Int, list: List[A]): Int = {
       (count, list) match {
         case (count, Nil) => count
