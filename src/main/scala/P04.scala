@@ -25,4 +25,10 @@ object P04 extends App {
       case _ :: tail => 1 + length2(tail)
     }
   }
+
+  def length3[A](list: List[A]): Int = {
+    list.foldLeft(0) {
+      (c, _) => c + 1
+    }
+  }
 }

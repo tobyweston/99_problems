@@ -5,7 +5,8 @@ class P04Test extends Specification {
 
   val implementations = List(
     P04.length _,
-    P04.length2 _
+    P04.length2 _,
+    P04.length3 _
   )
 
   implementations.zipWithIndex.map { value =>
