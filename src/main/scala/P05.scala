@@ -24,4 +24,10 @@ object P05 extends App {
     }
     reverse(List[A](), list)
   }
+
+  def reverse3[A](list: List[A]): List[A] = {
+    list.foldLeft(List[A]()) {
+      (list, element) => element +: list
+    }
+  }
 }
