@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 
 // P05 (*) Reverse a list.
 //     Example:
@@ -11,5 +12,16 @@ object P05 extends App {
       case Nil => List()
       case head :: tail => reverse(tail) :+ head
     }
+  }
+
+  def reverse2[A](list: List[A]): List[A] = {
+    @tailrec
+    def reverse(result: List[A], current: List[A]): List[A] = {
+      current match {
+        case Nil => result
+        case head :: tail => reverse(head +: result, tail)
+      }
+    }
+    reverse(List[A](), list)
   }
 }
