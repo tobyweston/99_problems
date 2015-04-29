@@ -1,4 +1,4 @@
-
+import scala.annotation.tailrec
 
 // P04(*) Find the number of elements of a list.
 //
@@ -18,4 +18,10 @@ object P04 extends App {
     length(0, list)
   }
 
+  def length2[A](list: List[A]): Int = {
+    list match {
+      case Nil => 0
+      case _ :: tail => 1 + length2(tail)
+    }
+  }
 }
