@@ -1,6 +1,7 @@
 import P02._
+import org.specs2.mutable.Specification
 
-class P02Test extends org.specs2.mutable.Specification {
+class P02Test extends Specification {
 
   val implementations: List[(List[Int]) => Int] = List(
     penultimate _,

@@ -1,6 +1,7 @@
 import P03._
+import org.specs2.mutable.Specification
 
-class P03Test extends org.specs2.mutable.Specification {
+class P03Test extends Specification {
 
   "get nth element" >> {
     nth(0, List(1, 1, 2, 3, 5, 8)) must_== 1
