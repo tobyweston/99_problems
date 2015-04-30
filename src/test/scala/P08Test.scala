@@ -4,7 +4,8 @@ import org.specs2.mutable.Specification
 class P08Test extends Specification {
 
   val implementations: List[(List[Symbol]) => List[Symbol]] = List(
-    compress _
+    compress _,
+    compress2 _
   )
 
   implementations.zipWithIndex.map { value =>
