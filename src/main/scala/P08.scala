@@ -11,8 +11,8 @@
 object P08 extends App {
 
   def compress[A](list: List[A]): List[A] = {
+    if (list.isEmpty) return list
     list match {
-      case Nil => List()
       case head :: Nil => List(head)
       case head :: tail if head == tail.head => compress(tail)
       case head :: tail => head +: compress(tail)
