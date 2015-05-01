@@ -19,9 +19,15 @@ object P08 extends App {
     }
   }
 
-  def compress2[A](ls: List[A]): List[A] = ls match {
-    case Nil => Nil
-    case head :: tail => head +: compress2(tail.dropWhile(_ == head))
+  def compress2[A](ls: List[A]): List[A] = {
+    def dropWhile(predicate: A => Boolean)(list: List[A]): List[A] = {
+      if (list.isEmpty || !predicate(list.head)) list else dropWhile(predicate)(list.tail)
+    }
+
+    ls match {
+      case Nil => Nil
+      case head :: tail => head +: compress2(dropWhile(_ == head)(tail))
+    }
   }
 
 }
