@@ -37,16 +37,21 @@ object P08 extends App {
 
   import ListOps._
   def compress4[A](list: List[A]): List[A] = {
-    def dropWhile(predicate: A => Boolean)(list: List[A]): List[A] = {
-      if (list.isEmpty || !predicate(list.head)) list else dropWhile(predicate)(list.tail)
-    }
-
     list match {
       case Nil => Nil
       case head :: tail => head +: compress2(tail.dropWhile2(_ == head))
     }
   }
 
+  def compress5[A](list: List[A]): List[A] = {
+    def compress(result: List[A], current: List[A]): List[A] = {
+      current match {
+        case Nil => result
+        case head :: tail => compress(result :+ head, tail.dropWhile(_ == head))
+      }
+    }
+    compress(Nil, list)
+  }
 }
 
 object ListOps {

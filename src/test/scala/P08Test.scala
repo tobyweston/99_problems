@@ -7,7 +7,8 @@ class P08Test extends Specification {
     compress _,
     compress2 _,
     compress3 _,
-    compress4 _
+    compress4 _,
+    compress5 _
   )
 
   implementations.zipWithIndex.map { value =>
