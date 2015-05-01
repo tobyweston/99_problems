@@ -21,7 +21,7 @@ object P08 extends App {
 
   def compress2[A](ls: List[A]): List[A] = ls match {
     case Nil => Nil
-    case h :: tail => h :: compress2(tail.dropWhile(_ == h))
+    case head :: tail => head +: compress2(tail.dropWhile(_ == head))
   }
 
 }
