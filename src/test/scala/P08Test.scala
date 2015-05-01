@@ -5,7 +5,9 @@ class P08Test extends Specification {
 
   val implementations: List[(List[Symbol]) => List[Symbol]] = List(
     compress _,
-    compress2 _
+    compress2 _,
+    compress3 _,
+    compress4 _
   )
 
   implementations.zipWithIndex.map { value =>
