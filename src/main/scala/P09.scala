@@ -9,8 +9,12 @@
 
 object P09 extends App {
 
-  def pack[A](list: List[A]): List[A] = {
-    ???
+  def pack[A](list: List[A]): List[List[A]] = {
+    val (duplicates, remaining) = list.span(_ == list.head)
+    (duplicates, remaining) match {
+      case (e, Nil) => List(e)
+      case _ => duplicates +: pack(remaining)
+    }
   }
 
 }
