@@ -13,4 +13,12 @@ object P07 extends App {
     }
   }
 
+  def flatten2[A](list: List[A]): List[A] = {
+    list match {
+      case Nil => List()
+      case (head: List[A]) :: tail => flatten2(head) ++ flatten2(tail)
+      case head :: tail => head :: flatten2(tail)
+    }
+  }
+
 }

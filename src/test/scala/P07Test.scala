@@ -11,4 +11,13 @@ class P07Test extends Specification {
     flatten(List()) must_== List()
   }
 
+
+  "flatten (flatten2)" >> {
+    flatten2(List(List(1, 1), 2, List(3, List(5, 8)))) must_== List(1, 1, 2, 3, 5, 8)
+  }
+
+  "empty list (flatten2)" >> {
+    flatten2(List()) must_== List()
+  }
+
 }

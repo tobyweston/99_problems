@@ -5,6 +5,7 @@ class P06Test extends Specification {
 
   "palindrome" >> {
     isPalindrome(List(1, 2, 3, 2, 1)) must_== true
+    isPalindrome(List(1, 2, 3, 3, 2, 1)) must_== true
   }
 
   "empty list" >> {
