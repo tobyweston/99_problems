@@ -11,6 +11,7 @@ class P02Test extends Specification {
 
   implementations.zipWithIndex.foreach { value =>
     "implementation " + value._2 >> {
+
       val implementation = value._1
       "get last element" >> {
         implementation(List(1, 1, 2, 3, 5, 8)) must_== 5
