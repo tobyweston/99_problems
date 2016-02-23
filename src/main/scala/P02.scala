@@ -16,8 +16,8 @@ object P02 extends App {
 
   def penultimate2[A](list: List[A]): A = {
     list match {
-      case head :: Nil :: _ => head
-      case _ :: tail => penultimate(tail)
+      case head :: _ :: Nil => head
+      case _ :: tail => penultimate2(tail)
       case _ => throw new NoSuchElementException
     }
   }
